@@ -1,6 +1,4 @@
-body{
-    background:#eee;    
-}
+
 .chat-list {
     padding: 0;
     font-size: .8rem;
@@ -28,7 +26,9 @@ body{
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    background: #5a99ee;
+    background: #11998e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #11998e, #38ef7d); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #11998e, #38ef7d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: inline-block;
     padding: 10px 20px;
     position: relative;
@@ -61,12 +61,6 @@ body{
     width: 70%;
 }
 
-.chat-list .in .chat-message:before {
-    left: -12px;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid #5a99ee;
-}
-
 .chat-list .out .chat-img {
     float: right;
 }
@@ -78,13 +72,9 @@ body{
 }
 
 .chat-list .out .chat-message {
-    background: #fc6d4c;
-}
-
-.chat-list .out .chat-message:before {
-    right: -12px;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #fc6d4c;
+    background: #36D1DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
 
 .card .card-header:first-child {
@@ -104,4 +94,29 @@ body{
 
 .content{
     margin-top:40px;    
+}
+
+.css-selector {
+    background: linear-gradient(270deg, #feac5e, #c779d0, #4bc0c8);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Form, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-chat-window',
@@ -9,7 +10,7 @@ export class ChatWindowComponent implements OnInit {
 
   socket = new WebSocket("ws://127.0.0.1:8181/core");
   userMessages: any = [];
-
+  messageSend = new FormControl("", [Validators.required, Validators.pattern("^[ a-zA-Z0-9]*$")]);
 
   constructor() { }
 
@@ -27,7 +28,7 @@ export class ChatWindowComponent implements OnInit {
       let data = JSON.parse(event.data)
       if (data.type == "recognizer_loop:utterance") {
         let newMessage = {
-          type: "you",
+          type: "You",
           message: data.data.utterances[0]
         }
         this.userMessages.push(newMessage)
@@ -35,13 +36,14 @@ export class ChatWindowComponent implements OnInit {
       }
       if (data.type == "speak") {
         let newMessage = {
-          type: "MyCroft",
+          type: "Billy",
           message: data.data.utterance
         }
-        console.log(newMessage)
-        this.userMessages.push(newMessage)
+        console.log(newMessage);
+        this.userMessages.push(newMessage);
       }
     };
+
 
     this.socket.onclose = (event) => {
       if (event.wasClean) {
@@ -56,6 +58,12 @@ export class ChatWindowComponent implements OnInit {
     this.socket.onerror = (error) => {
       console.log(`[error] ${error}`);
     };
+  }
+
+  send(): void {
+    console.log(this.messageSend.value);
+    this.socket.send(`{"type": "recognizer_loop:utterance", "data": {"utterances" : ["${this.messageSend.value}"]}}`);
+    this.messageSend.setValue("");
   }
 
 

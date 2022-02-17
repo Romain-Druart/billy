@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
-                <div class="card-header">Chat</div>
+                <div class="card-header">Billy</div>
                 <div class="card-body height3">
                     <ul class="chat-list">
-                        <li *ngFor="let message of userMessages" [ngClass]="message.type === 'you'? 'out':'in'">
+                        <li *ngFor="let message of userMessages" [ngClass]="message.type === 'You'? 'out':'in'">
                             <div class="chat-img">
                                 <img alt="Avtar"
-                                    [src]="message.type === 'you'? 'https://bootdey.com/img/Content/avatar/avatar6.png':'https://bootdey.com/img/Content/avatar/avatar1.png'">
+                                    [src]="message.type === 'You'? 'https://bootdey.com/img/Content/avatar/avatar6.png':'https://bootdey.com/img/Content/avatar/avatar1.png'">
                             </div>
                             <div class="chat-body">
                                 <div class="chat-message">
@@ -21,4 +21,15 @@
                 </div>
             </div>
         </div>
+        <form>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Taper la commande" aria-label="commande"
+                    aria-describedby="basic-addon2" [formControl]="messageSend">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" [disabled]="!messageSend.valid" type="submit"
+                        (submit)="send()" (click)="send()">Envoyer</button>
+                </div>
+            </div>
+        </form>
     </div>
+</div>

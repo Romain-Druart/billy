@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background: linear-gradient(270deg, #feac5e, #c779d0, #4bc0c8);
+    background-size: 600% 600%;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vh;
+
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
