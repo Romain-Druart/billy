@@ -1,0 +1,24 @@
+<div class="container content">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">Chat</div>
+                <div class="card-body height3">
+                    <ul class="chat-list">
+                        <li *ngFor="let message of userMessages" [ngClass]="message.type === 'you'? 'out':'in'">
+                            <div class="chat-img">
+                                <img alt="Avtar"
+                                    [src]="message.type === 'you'? 'https://bootdey.com/img/Content/avatar/avatar6.png':'https://bootdey.com/img/Content/avatar/avatar1.png'">
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <h5>{{ message.type }} </h5>
+                                    <p>{{ message.message}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
