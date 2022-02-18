@@ -1,18 +1,18 @@
 <div class="container content">
-    <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+    <div class="row dialogContainer">
+        <div class="">
             <div class="card">
                 <div class="card-header">Billy</div>
-                <div class="card-body height3">
-                    <ul class="chat-list">
+                <div class="card-body height3" #chatMessages>
+                    <ul class="chat-list" id="messageDisplay">
                         <li *ngFor="let message of userMessages" [ngClass]="message.type === 'You'? 'out':'in'">
                             <div class="chat-img">
                                 <img alt="Avtar"
-                                    [src]="message.type === 'You'? 'https://bootdey.com/img/Content/avatar/avatar6.png':'https://bootdey.com/img/Content/avatar/avatar1.png'">
+                                    [src]="message.type === 'You'? '.././assets/mikeWazowski_head.jpg':'.././assets/harold_2.jpg'">
                             </div>
                             <div class="chat-body">
                                 <div class="chat-message">
-                                    <h5>{{ message.type }} </h5>
+                                    <h5>{{ message.type }}</h5>
                                     <p>{{ message.message}}</p>
                                 </div>
                             </div>
@@ -26,8 +26,8 @@
                 <input type="text" class="form-control" placeholder="Taper la commande" aria-label="commande"
                     aria-describedby="basic-addon2" [formControl]="messageSend">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" [disabled]="!messageSend.valid" type="submit"
-                        (submit)="send()" (click)="send()">Envoyer</button>
+                    <button class="btn btn-imageStyle" [disabled]="!messageSend.valid" type="submit" (submit)="send()"
+                        (click)="send()">Envoyer</button>
                 </div>
             </div>
         </form>

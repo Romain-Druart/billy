@@ -1,3 +1,18 @@
+.dialogContainer{
+    width: 70%;
+    max-height: 80%;
+}
+
+.container{
+    height: 80%;
+}
+
+.btn-imageStyle{
+    // background-image: "./assets/mikeWazowski.jpg";
+    border-color: #17202b;
+    background: linear-gradient(to right, #5B86E5, #36D1DC);
+    color: #000;
+}
 
 .chat-list {
     padding: 0;
@@ -91,15 +106,19 @@
     font-weight: 600;
     color: #ffffff;
 }
-
+.card-body {
+    min-height: 80vh;
+    overflow-y: scroll;
+    max-height: 80vh;
+}
 .content{
     margin-top:40px;    
+    height: 80%;
 }
 
 .css-selector {
     background: linear-gradient(270deg, #feac5e, #c779d0, #4bc0c8);
     background-size: 600% 600%;
-
     -webkit-animation: AnimationName 8s ease infinite;
     -moz-animation: AnimationName 8s ease infinite;
     animation: AnimationName 8s ease infinite;
