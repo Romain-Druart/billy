@@ -15,6 +15,8 @@
                                     <h5>{{ message.type }}</h5>
                                     <p>{{ message.message}}</p>
                                 </div>
+                                <button *ngIf="message.type != 'You'" class="btn btn-alert"
+                                    (click)="throwAlert()">Correct</button>
                             </div>
                         </li>
                     </ul>

@@ -1,5 +1,5 @@
 .dialogContainer{
-    width: 70%;
+    width: 100%;
     max-height: 80%;
 }
 
@@ -13,6 +13,25 @@
     background: linear-gradient(to right, #5B86E5, #36D1DC);
     color: #000;
 }
+
+.btn-alert{
+    
+    font-weight: boldn;
+    border-radius: 20rem;
+    height: 60;
+    width: 60;
+    margin-bottom: 17px;
+    margin-left: 2px;
+
+    background:url(../../assets/harold_head_btn.jpg) no-repeat;
+        cursor:pointer;
+        border:none;
+}
+
+.btn-alert:active  /* use Dot here */
+    {   
+        background:url(../../assets/harold_head_btn.jpg) no-repeat;
+    }
 
 .chat-list {
     padding: 0;
@@ -73,7 +92,7 @@
 .chat-list .chat-body {
     margin-left: 20px;
     float: left;
-    width: 70%;
+    width: 90%;
 }
 
 .chat-list .out .chat-img {

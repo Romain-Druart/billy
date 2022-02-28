@@ -10,7 +10,7 @@ export class ChatWindowComponent implements OnInit {
 
   socket = new WebSocket("ws://127.0.0.1:8181/core");
   userMessages: any = [];
-  messageSend = new FormControl("", [Validators.required, Validators.pattern("^[ a-zA-Z0-9]*$")]);
+  messageSend = new FormControl("", [Validators.required, Validators.pattern("^[ 'ç,éèa-zA-Z0-9]*$")]);
   @ViewChild("chatMessages") chatMessages?: ElementRef;
 
   constructor() { }
@@ -70,6 +70,10 @@ export class ChatWindowComponent implements OnInit {
     // console.log(this.messageSend.value);
     this.socket.send(`{"type": "recognizer_loop:utterance", "data": {"utterances" : ["${this.messageSend.value}"]}}`);
     this.messageSend.setValue("");
+  }
+
+  throwAlert() {
+    window.prompt("o(*≧▽≦)ツ┏━┓ \n\nQuelle est la réponse attendu?");
   }
 
 
